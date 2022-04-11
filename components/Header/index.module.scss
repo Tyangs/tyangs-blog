@@ -1,0 +1,13 @@
+.logo {
+  font-size: 3.2rem;
+}
+
+.nav-bar {
+  color: #666666;
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+  &_item {
+    margin-right: 2.4rem;
+    cursor: pointer;
+  }
+}
