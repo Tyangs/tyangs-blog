@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllBlogs, getBlogBySlug } from '@utils/getPost';
+import { getAllBlogs, getBlogBySlug, BlogInfo } from '@utils/getPost';
 import { mdToHtml } from '@utils/mdToHtml';
 
 type PathParams = {
@@ -11,12 +11,12 @@ type PathsProps = {
 };
 
 interface IBlogProps {
-	blogInfo: { title: string; date: string; slug: string; content: string };
+	blogInfo: BlogInfo;
 }
 
 const Blog = (props: IBlogProps) => {
 	const {
-		blogInfo: { title, date, slug, content },
+		blogInfo: { title, date, content },
 	} = props;
 
 	return (
@@ -31,7 +31,7 @@ const Blog = (props: IBlogProps) => {
 export default Blog;
 
 export async function getStaticProps({ params }: PathsProps) {
-	const blogInfo = getBlogBySlug(params.slug, ['title', 'date', 'slug', 'content']);
+	const blogInfo = getBlogBySlug(params.slug);
 	const content = await mdToHtml(blogInfo.content || '');
 
 	const props = {
@@ -47,7 +47,7 @@ export async function getStaticProps({ params }: PathsProps) {
 }
 
 export const getStaticPaths = async () => {
-	const blogs = getAllBlogs(['slug']);
+	const blogs = getAllBlogs();
 
 	return {
 		paths: blogs.map(blog => ({
