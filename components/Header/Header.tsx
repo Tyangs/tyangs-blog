@@ -14,8 +14,8 @@ const navBarList: NavBar[] = [
 		link: '/',
 	},
 	{
-		label: '分类',
-		link: '/category',
+		label: '标签',
+		link: '/tags',
 	},
 	{
 		label: '关于',
