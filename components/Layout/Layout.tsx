@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from './components/Page';
-// import TopBar from './components/TopBar';
+import { useTheme } from '@context/ThemeProvider';
 import styles from './index.module.scss';
 
 interface ILayoutProps {
@@ -10,8 +10,10 @@ interface ILayoutProps {
 const Layout = (props: ILayoutProps) => {
 	const { children } = props;
 
+	const { theme } = useTheme();
+
 	return (
-		<div className={styles['wrapper']}>
+		<div className={theme}>
 			{/* <TopBar /> */}
 			<div className={styles['container']}>
 				<Page>{children}</Page>

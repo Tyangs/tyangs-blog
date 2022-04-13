@@ -16,17 +16,22 @@ a {
   box-sizing: border-box;
 }
 
-:root {
-  --color-white: #ffffff;
-  --color-black: #111111;
-  --color-50: #e8f3ff;
-	--color-100: #cfd8e3;
-	--color-200: #b5bdcc;
-	--color-300: #97a3b4;
-	--color-400: #7b899d;
-	--color-500: #626f84;
-	--color-600: #4b5768;
-	--color-700: #343e4b;
-	--color-800: #1e2530;
-	--color-900: #070c18;
+.light {
+  --foreground-color: #F2F3F4;
+  --background-color: #3E4042;
+  --font-color-1: #97a3b4;
+  --font-color-2: #626f84;
+  --font-color-3: #4b5768;
+  --font-color-4: #343e4b;
+  --border-color: #b5bdcc;
+}
+
+.dark {
+  --foreground-color: #3E4042;
+  --background-color: #252B2F;
+  --font-color-1: #b5bdcc;
+  --font-color-2: #cfd8e3;
+  --font-color-3: #e8f3ff;
+  --font-color-4: #ffffff;
+  --border-color: #626f84;
 }

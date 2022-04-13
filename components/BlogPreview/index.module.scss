@@ -2,16 +2,17 @@
   font-size: 2.4rem;
   font-weight: 600;
   cursor: pointer;
+  color: var(--font-color-4);
 }
 
 .content {
   margin-top: 1.2rem;
   font-size: 1.6rem;
-  color: var(--color-500);
+  color: var(--font-color-2);
 }
 
 .date {
   margin-top: 1.2rem;
   font-size: 1.4rem;
-  color: var(--color-400);
+  color: var(--font-color-1);
 }

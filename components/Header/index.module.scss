@@ -2,10 +2,11 @@
   font-size: 3.2rem;
   font-weight: 600;
   cursor: pointer;
+  color: var(--font-color-4);
 }
 
 .nav-bar {
-  color: var(--color-500);
+  color: var(--font-color-2);
   margin-top: 2.4rem;
   font-size: 1.6rem;
   &_item {

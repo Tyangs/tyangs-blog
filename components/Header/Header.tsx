@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { useTheme } from '@context/ThemeProvider';
 import Divider from '../Divider';
 import styles from './index.module.scss';
 
@@ -24,6 +25,8 @@ const navBarList: NavBar[] = [
 ];
 
 const Header = () => {
+	const { toggleTheme } = useTheme();
+
 	return (
 		<div>
 			<Link href="/">
@@ -35,6 +38,9 @@ const Header = () => {
 						<span className={styles['nav-bar_item']}>{n.label}</span>
 					</Link>
 				))}
+				<span className={styles['nav-bar_item']} onClick={toggleTheme}>
+					主题
+				</span>
 			</div>
 			<Divider />
 		</div>
