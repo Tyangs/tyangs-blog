@@ -17,18 +17,20 @@ a {
 }
 
 .light {
-  --foreground-color: #F2F3F4;
-  --background-color: #3E4042;
+  --foreground: #fcfcfa;
+  --background: #f0efe7 url('/bg.jpeg');
+  --page-border: solid 1px #e2e0d8;
   --font-color-1: #97a3b4;
   --font-color-2: #626f84;
   --font-color-3: #4b5768;
   --font-color-4: #343e4b;
-  --border-color: #b5bdcc;
+  --border-color: #e2e0d8;
 }
 
 .dark {
-  --foreground-color: #3E4042;
-  --background-color: #252B2F;
+  --foreground: #3E4042;
+  --background: #252B2F;
+  --page-border: solid 1px #222628;
   --font-color-1: #b5bdcc;
   --font-color-2: #cfd8e3;
   --font-color-3: #e8f3ff;
