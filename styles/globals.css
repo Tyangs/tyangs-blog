@@ -16,10 +16,7 @@ a {
   box-sizing: border-box;
 }
 
-.light {
-  --foreground: #fcfcfa;
-  --background: #f0efe7 url('/bg.jpeg');
-  --page-border: solid 1px #e2e0d8;
+:root {
   --font-color-1: #97a3b4;
   --font-color-2: #626f84;
   --font-color-3: #4b5768;
@@ -27,13 +24,14 @@ a {
   --border-color: #e2e0d8;
 }
 
+.light {
+  --foreground: #fcfcfa;
+  --background: #f0efe7 url('/bg.jpeg');
+  --page-border: solid 1px #e2e0d8;
+}
+
 .dark {
-  --foreground: #3E4042;
-  --background: #252B2F;
-  --page-border: solid 1px #222628;
-  --font-color-1: #b5bdcc;
-  --font-color-2: #cfd8e3;
-  --font-color-3: #e8f3ff;
-  --font-color-4: #ffffff;
-  --border-color: #626f84;
+  --foreground: #fcfcfa;
+  --background: #3E4042;
+  --page-border: solid 1px #252B2F;
 }
