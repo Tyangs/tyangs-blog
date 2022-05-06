@@ -38,9 +38,9 @@ const Header = () => {
 						<span className={styles['nav-bar_item']}>{n.label}</span>
 					</Link>
 				))}
-				<span className={styles['nav-bar_item']} onClick={toggleTheme}>
+				{/* <span className={styles['nav-bar_item']} onClick={toggleTheme}>
 					主题
-				</span>
+				</span> */}
 			</div>
 			<Divider />
 		</div>

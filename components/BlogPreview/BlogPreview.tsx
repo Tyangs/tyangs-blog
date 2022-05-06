@@ -15,8 +15,8 @@ const BlogPreview = (props: IBlogPreviewProps) => {
 			<Link href={`/blog/${slug}`}>
 				<span className={styles['title']}>{title}</span>
 			</Link>
-			<div className={styles['content']}>{content.substr(0, 300)}</div>
-			<div className={styles['date']}>{date.substr(0, 10)}</div>
+			<div className={styles['content']}>{content.substring(0, 300)}</div>
+			<div className={styles['date']}>{date.substring(0, 10)}</div>
 			<Divider dashed />
 		</div>
 	);

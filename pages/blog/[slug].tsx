@@ -1,6 +1,7 @@
 import React from 'react';
 import { getAllBlogs, getBlogBySlug, BlogInfo } from '@utils/getPost';
-import { mdToHtml } from '@utils/mdToHtml';
+import BackButton from '@components/BackButton';
+import BlogContent from '@components/BlogContent';
 
 type PathParams = {
 	slug: string;
@@ -16,14 +17,13 @@ interface IBlogProps {
 
 const Blog = (props: IBlogProps) => {
 	const {
-		blogInfo: { title, date, content },
+		blogInfo: { content },
 	} = props;
 
 	return (
 		<div>
-			<div>{title}</div>
-			<div>{date}</div>
-			<div dangerouslySetInnerHTML={{ __html: content }} />
+			<BackButton />
+			<BlogContent content={content} />
 		</div>
 	);
 };
@@ -32,7 +32,7 @@ export default Blog;
 
 export async function getStaticProps({ params }: PathsProps) {
 	const blogInfo = getBlogBySlug(params.slug);
-	const content = await mdToHtml(blogInfo.content || '');
+	const content = blogInfo.content;
 
 	const props = {
 		blogInfo: {

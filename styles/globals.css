@@ -25,7 +25,8 @@ a {
 }
 
 .light {
-  --foreground: #fcfcfa;
+  --foreground: rgba(255,255,255,0.6);
+  /* --foreground: #fcfcfa; */
   --background: #f0efe7 url('/bg.jpeg');
   --page-border: solid 1px #e2e0d8;
 }

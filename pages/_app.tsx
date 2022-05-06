@@ -1,9 +1,22 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import {useState, useEffect} from 'react'
 import Layout from '@components/Layout';
-import {ThemeProvider} from '@context/ThemeProvider';
+import { ThemeProvider } from '@context/ThemeProvider';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import '../styles/globals.css';
+import '../styles/one-dark.css';
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+	const [isSSR, setIsSSR] = useState<boolean>(true)
+
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			setIsSSR(false)
+		}
+	}, [])
+
+	if (isSSR) return null;
+
 	return (
 		<ThemeProvider>
 			<Layout>
@@ -11,6 +24,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 			</Layout>
 		</ThemeProvider>
 	);
-}
+};
 
 export default MyApp;
