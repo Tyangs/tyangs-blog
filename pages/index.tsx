@@ -1,4 +1,4 @@
-import { getAllBlogs, BlogInfo } from '@utils/getPost';
+import { getAllBlogs, BlogInfo } from '@utils/getBlog';
 import Header from '@components/Header';
 import BlogPreview from '@components/BlogPreview';
 

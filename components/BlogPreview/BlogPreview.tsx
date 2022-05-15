@@ -1,5 +1,5 @@
 import Divider from '@components/Divider';
-import { BlogInfo } from '@utils/getPost';
+import { BlogInfo } from '@utils/getBlog';
 import Link from 'next/link';
 import React from 'react';
 
