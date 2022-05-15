@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTheme } from '@context/ThemeProvider';
 import Divider from '../Divider';
 import styles from './index.module.scss';
@@ -30,7 +31,13 @@ const Header = () => {
 	return (
 		<div>
 			<Link href="/">
-				<span className={styles['logo']}>Tyangs</span>
+				<Image
+					className={styles['logo']}
+					src="/tyangs.png"
+					width={173}
+					height={65}
+					alt="tyangs logo"
+				/>
 			</Link>
 			<div className={styles['nav-bar']}>
 				{navBarList.map(n => (

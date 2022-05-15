@@ -17,8 +17,9 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-markdown": "^8.0.3",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "rehype-highlight": "^5.0.2",
+    "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "17.0.23",

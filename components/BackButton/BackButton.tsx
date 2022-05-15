@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 const BackButton = () => {
 	const router = useRouter();
 	const goBack = () => {
-		router.back();
+		router.push('/');
 	};
 
 	return (

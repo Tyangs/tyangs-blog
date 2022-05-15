@@ -4,7 +4,7 @@ import Layout from '@components/Layout';
 import { ThemeProvider } from '@context/ThemeProvider';
 
 import '../styles/globals.css';
-import '../styles/one-dark.css';
+import '../styles/hljs.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	const [isSSR, setIsSSR] = useState<boolean>(true)
