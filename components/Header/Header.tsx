@@ -1,7 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { useTheme } from '@context/ThemeProvider';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+
 import Divider from '../Divider';
 import styles from './index.module.scss';
 

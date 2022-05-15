@@ -1,6 +1,6 @@
-import { getAllBlogs, BlogInfo } from '@utils/getBlog';
-import Header from '@components/Header';
 import BlogPreview from '@components/BlogPreview';
+import Header from '@components/Header';
+import { BlogInfo,getAllBlogs } from '@utils/getBlog';
 
 interface IHomeProps {
 	blogInfos: BlogInfo[];

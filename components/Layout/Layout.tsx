@@ -1,6 +1,7 @@
-import React from 'react';
-import Page from './components/Page';
 import { useTheme } from '@context/ThemeProvider';
+import React from 'react';
+
+import Page from './components/Page';
 import styles from './index.module.scss';
 
 interface ILayoutProps {

@@ -1,7 +1,7 @@
-import React from 'react';
-import { getAllBlogs, getBlogBySlug, BlogInfo } from '@utils/getBlog';
 import BackButton from '@components/BackButton';
 import BlogContent from '@components/BlogContent';
+import { BlogInfo,getAllBlogs, getBlogBySlug } from '@utils/getBlog';
+import React from 'react';
 
 type PathParams = {
 	slug: string;
