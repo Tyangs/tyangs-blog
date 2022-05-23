@@ -1,6 +1,12 @@
-.wrapper {
-}
+.wrapper {}
+
 .container {
   background: var(--background);
   padding: 4vw;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
 }

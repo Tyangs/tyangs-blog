@@ -8,3 +8,9 @@
   padding: 7.2rem 3.6vw 4.8rem;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    border-radius: 0;
+  }
+}
