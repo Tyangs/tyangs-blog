@@ -1,18 +1,35 @@
-.title {
-  font-size: 2.4rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--font-color-4);
-}
+.wrapper {
+  .title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--font-color-4);
+  }
 
-.content {
-  margin-top: 1.2rem;
-  font-size: 1.6rem;
-  color: var(--font-color-2);
-}
+  .content {
+    margin-top: 1.2rem;
+    font-size: 1.6rem;
+    color: var(--font-color-2);
 
-.date {
-  margin-top: 1.2rem;
-  font-size: 1.4rem;
-  color: var(--font-color-1);
+    .ellipsis {
+      cursor: pointer;
+      transition: all .5s ease-out;
+
+      &:hover {
+        font-weight: 900;
+      }
+    }
+  }
+
+  .blog-info {
+    margin-top: 1.2rem;
+    font-size: 1.4rem;
+    color: var(--font-color-1);
+    display: flex;
+
+    span {
+      margin-right: 2.4rem;
+    }
+  }
+
 }

@@ -31,7 +31,7 @@ const Header = () => {
 
 	return (
 		<div>
-			<Link href="/">
+			<Link href="/" passHref>
 				<Image
 					className={styles['logo']}
 					src="/tyangs.png"
@@ -42,7 +42,7 @@ const Header = () => {
 			</Link>
 			<div className={styles['nav-bar']}>
 				{navBarList.map(n => (
-					<Link href={n.link} key={n.label}>
+					<Link href={n.link} key={n.label} passHref>
 						<span className={styles['nav-bar_item']}>{n.label}</span>
 					</Link>
 				))}
