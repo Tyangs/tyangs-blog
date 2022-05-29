@@ -7,18 +7,26 @@ import remarkGfm from 'remark-gfm';
 import styles from './index.module.scss';
 
 interface BlogContentProps {
+	title: string;
 	content: string;
 }
 
 const BlogContent = (props: BlogContentProps) => {
-	const { content } = props;
+	const { title, content } = props;
 
 	return (
+		// <div>
+		// 	<h1 className={styles['markdown-title']}>{title}</h1>
 		<div className={styles['markdown-body']}>
-			<ReactMarkdown rehypePlugins={[rehypeRaw, rehypeHighlight]} remarkPlugins={[remarkGfm]}>
+			<ReactMarkdown
+				linkTarget="_blank"
+				rehypePlugins={[rehypeRaw, rehypeHighlight]}
+				remarkPlugins={[remarkGfm]}
+			>
 				{content}
 			</ReactMarkdown>
 		</div>
+		// </div>
 	);
 };
 

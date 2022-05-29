@@ -1,38 +1,40 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family:  "Montserrat", "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  letter-spacing: 0.6px;
-  font-size: 10px;
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', 'SF UI Text', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+		'Segoe UI', 'Helvetica Neue', Helvetica, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', sans-serif;
+	letter-spacing: 0.6px;
+	font-size: 10px;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 :root {
-  --font-color-1: #97a3b4;
-  --font-color-2: #626f84;
-  --font-color-3: #4b5768;
-  --font-color-4: #343e4b;
-  --border-color: #e2e0d8;
+	--font-color-1: #97a3b4;
+	--font-color-2: #626f84;
+	--font-color-3: #4b5768;
+	--font-color-4: #343e4b;
+	--border-color: #e2e0d8;
 }
 
 .light {
-  --foreground: rgba(255,255,255,0.6);
-  /* --foreground: #fcfcfa; */
-  --background: #f0efe7 url('/bg.jpeg');
-  --page-border: solid 1px #e2e0d8;
+	--foreground: rgba(255, 255, 255, 0.6);
+	/* --foreground: #fcfcfa; */
+	--background: #f0efe7 url('/bg.jpeg');
+	--page-border: solid 1px #e2e0d8;
 }
 
 .dark {
-  --foreground: #fcfcfa;
-  --background: #3E4042;
-  --page-border: solid 1px #252B2F;
+	--foreground: #fcfcfa;
+	--background: #3e4042;
+	--page-border: solid 1px #252b2f;
 }

@@ -1,6 +1,6 @@
 import BackButton from '@components/BackButton';
 import BlogContent from '@components/BlogContent';
-import { BlogInfo,getAllBlogs, getBlogBySlug } from '@utils/getBlog';
+import { BlogInfo, getAllBlogs, getBlogBySlug } from '@utils/getBlog';
 import React from 'react';
 
 type PathParams = {
@@ -17,13 +17,13 @@ interface IBlogProps {
 
 const Blog = (props: IBlogProps) => {
 	const {
-		blogInfo: { content },
+		blogInfo: { title, content },
 	} = props;
 
 	return (
 		<div>
 			<BackButton />
-			<BlogContent content={content} />
+			<BlogContent title={title} content={content} />
 		</div>
 	);
 };
