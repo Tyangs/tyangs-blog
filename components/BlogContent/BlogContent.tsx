@@ -1,3 +1,4 @@
+import { headingParse } from '@utils/headingParse';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
@@ -15,8 +16,6 @@ const BlogContent = (props: BlogContentProps) => {
 	const { title, content } = props;
 
 	return (
-		// <div>
-		// 	<h1 className={styles['markdown-title']}>{title}</h1>
 		<div className={styles['markdown-body']}>
 			<ReactMarkdown
 				linkTarget="_blank"
@@ -26,7 +25,6 @@ const BlogContent = (props: BlogContentProps) => {
 				{content}
 			</ReactMarkdown>
 		</div>
-		// </div>
 	);
 };
 

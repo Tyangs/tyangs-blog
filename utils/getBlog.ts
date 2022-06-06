@@ -12,10 +12,17 @@ export type BlogInfo = {
 
 const blogsDir = path.join(process.cwd(), '_blogs');
 
-// 拿到 _blogs 所有文件夹下的文件名，即  slug
+/**
+ * get all blog slug(file name) from _blogs dir
+ * @returns blog slug array
+ */
 export const getBlogSlugs = () => fs.readdirSync(blogsDir);
 
-// 根据 slug 获取 blogInfo
+/**
+ * get blogInfo by slug
+ * @param slug blog file name in the _blogs dir
+ * @returns blogInfo
+ */
 export const getBlogBySlug = (slug: string): BlogInfo => {
 	const realSlug = slug.replace(/\.md$/, '');
 	const blogPath = path.join(blogsDir, `${realSlug}.md`);
@@ -30,7 +37,10 @@ export const getBlogBySlug = (slug: string): BlogInfo => {
 	};
 };
 
-// 获取 _blogs 下所有的 blogInfo 信息
+/**
+ * get all blogInfo from the _blogs dir
+ * @returns blogInfo array
+ */
 export const getAllBlogs = () => {
 	const slugs = getBlogSlugs();
 	const blogs = slugs.map(slug => getBlogBySlug(slug)).sort((a, b) => (a.date > b.date ? -1 : 1));
