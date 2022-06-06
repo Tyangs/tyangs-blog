@@ -1,7 +1,7 @@
 import { getLast } from './array';
 import { getTargetStringCount } from './string';
 
-interface IMdHeadingInfo {
+export interface IMdHeadingInfo {
 	level: 1 | 2 | 3 | 4 | 5 | 6;
 	title: string;
 	children: IMdHeadingInfo[];
@@ -11,27 +11,27 @@ export const headingParse = (mdContent: string): IMdHeadingInfo[] => {
 	// start with `#`
 	const startWithNumberSignArray = mdContent.split('\n').filter(c => c.startsWith('#'));
 
-	const parsedResult: IMdHeadingInfo[] = [];
-
-	startWithNumberSignArray.forEach(item => {
-		const level = getTargetStringCount(item, '#') as IMdHeadingInfo['level'];
+	const parsedResult = startWithNumberSignArray.reduce<IMdHeadingInfo[]>((pre, curr) => {
+		const level = getTargetStringCount(curr, '#') as IMdHeadingInfo['level'];
 		// pass Heading 1 case
-		if (level === 1) return;
+		if (level === 1) return pre;
 
-		const title = item.split('# ')[1];
+		const title = curr.split('# ')[1];
 
-		const headingInfo = {
+		const currentHeadingInfo = {
 			level,
 			title,
 			children: [],
 		};
 
-		if (!parsedResult.length) {
-			parsedResult.push(headingInfo);
+		if (!pre.length) {
+			pre.push(currentHeadingInfo);
 		} else {
-			insertHeadingInfo(parsedResult, headingInfo);
+			insertHeadingInfo(pre, currentHeadingInfo);
 		}
-	});
+
+		return pre;
+	}, []);
 
 	return parsedResult;
 };

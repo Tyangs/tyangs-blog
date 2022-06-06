@@ -1,10 +1,11 @@
-export const getPreviewContent = (mdContent: string) => mdContent.replaceAll(/[# | * | `]/g, ' ');
+export const getPreviewContent = (mdContent: string) =>
+	mdContent.replaceAll(/[# | * | ` | -]/g, ' ');
 
 /**
- * Search for the count of occurrences of the target string in str.
- * @param str the string that will be searched
+ * Search for the count of occurrences of the target string in long string.
+ * @param longStr the string that will be searched
  * @param target target string
- * @returns the count of target in str
+ * @returns the count of target in long string
  */
-export const getTargetStringCount = (str: string, target: string): number =>
-	str.includes(target) ? str.split(target).length - 1 : 0;
+export const getTargetStringCount = (longStr: string, target: string): number =>
+	longStr.includes(target) ? longStr.split(target).length - 1 : 0;
