@@ -9,3 +9,5 @@ export const getPreviewContent = (mdContent: string) =>
  */
 export const getTargetStringCount = (longStr: string, target: string): number =>
 	longStr.includes(target) ? longStr.split(target).length - 1 : 0;
+
+export const getAnchorByTitle = (title: string) => title.toLowerCase().replaceAll(' ', '-');

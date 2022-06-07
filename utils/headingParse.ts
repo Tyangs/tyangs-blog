@@ -1,8 +1,9 @@
 import { getLast } from './array';
-import { getTargetStringCount } from './string';
+import { getAnchorByTitle, getTargetStringCount } from './string';
 
 export interface IMdHeadingInfo {
 	level: 1 | 2 | 3 | 4 | 5 | 6;
+	anchor: string;
 	title: string;
 	children: IMdHeadingInfo[];
 }
@@ -18,8 +19,11 @@ export const headingParse = (mdContent: string): IMdHeadingInfo[] => {
 
 		const title = curr.split('# ')[1];
 
+		const anchor = getAnchorByTitle(title);
+
 		const currentHeadingInfo = {
 			level,
+			anchor,
 			title,
 			children: [],
 		};

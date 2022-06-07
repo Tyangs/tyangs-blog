@@ -5,6 +5,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 
+import { customComponents } from './customComponents';
 import styles from './index.module.scss';
 
 interface BlogContentProps {
@@ -18,6 +19,7 @@ const BlogContent = (props: BlogContentProps) => {
 	return (
 		<div className={styles['markdown-body']}>
 			<ReactMarkdown
+				components={customComponents}
 				linkTarget="_blank"
 				rehypePlugins={[rehypeRaw, rehypeHighlight]}
 				remarkPlugins={[remarkGfm]}

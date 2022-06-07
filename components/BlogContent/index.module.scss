@@ -1,8 +1,3 @@
-// .markdown-title {
-//   font-size: 4.8rem;
-//   color: #24292e;
-// }
-
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;
@@ -993,3 +988,42 @@
 }
 
 /*# sourceMappingURL=github-markdown.min.css.map */
+
+.markdown-body {
+
+  .heading-anchor {
+    position: relative;
+    color: #24292e;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      &::before {
+        content: '#';
+        position: absolute;
+        font-size: .8em;
+        left: -.8em;
+        color: var(--font-color-2);
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+      }
+
+      &:hover {
+
+        &::before {
+          opacity: .5;
+        }
+      }
+
+    }
+
+    &:hover {
+      text-decoration: none;
+
+    }
+
+  }
+
+}
