@@ -1,4 +1,3 @@
-import { headingParse } from '@utils/headingParse';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
@@ -7,7 +6,6 @@ import remarkGfm from 'remark-gfm';
 
 import { customComponents } from './customComponents';
 import styles from './index.module.scss';
-
 interface BlogContentProps {
 	title: string;
 	content: string;

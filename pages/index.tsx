@@ -1,6 +1,7 @@
 import BlogPreview from '@components/BlogPreview';
 import Header from '@components/Header';
-import { BlogInfo,getAllBlogs } from '@utils/getBlog';
+import Layout from '@components/Layout';
+import { BlogInfo, getAllBlogs } from '@utils/getBlog';
 
 interface IHomeProps {
 	blogInfos: BlogInfo[];
@@ -10,12 +11,12 @@ const Home = (props: IHomeProps) => {
 	const { blogInfos } = props;
 
 	return (
-		<div>
+		<Layout>
 			<Header />
 			{blogInfos.map(blogInfo => (
 				<BlogPreview key={blogInfo.slug} {...blogInfo} />
 			))}
-		</div>
+		</Layout>
 	);
 };
 

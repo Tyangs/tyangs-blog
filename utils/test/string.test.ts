@@ -1,4 +1,4 @@
-import { getPreviewContent, getTargetStringCount } from '../string';
+import { getAnchorByTitle, getPreviewContent, getTargetStringCount } from '../string';
 
 test('parse preview content', () => {
 	const mdContent = "# About Git *Young* `const a = '555'`";
@@ -21,4 +21,15 @@ describe('get target string in long string count', () => {
 		const targetCount = getTargetStringCount(longStr, targetStr);
 		expect(targetCount).toBe(0);
 	});
+});
+
+test('adapter title to anchor', () => {
+	const title1 = 'Ni Hao Wa';
+	const title2 = '你 好 Wa';
+
+	const anchor1 = getAnchorByTitle(title1);
+	const anchor2 = getAnchorByTitle(title2);
+
+	expect(anchor1).toBe('ni-hao-wa');
+	expect(anchor2).toBe('你-好-wa');
 });

@@ -5,14 +5,9 @@ export interface IMdHeadingInfo {
 	level: 1 | 2 | 3 | 4 | 5 | 6;
 	anchor: string;
 	title: string;
-	children: IMdHeadingInfo[];
 }
 
-/**
- * Not use currently
- * @deprecated
- */
-export const headingParse = (mdContent: string): IMdHeadingInfo[] => {
+export const mdHeadingParse = (mdContent: string): IMdHeadingInfo[] => {
 	// start with `#`
 	const startWithNumberSignArray = mdContent.split('\n').filter(c => c.startsWith('#'));
 
@@ -32,30 +27,10 @@ export const headingParse = (mdContent: string): IMdHeadingInfo[] => {
 			children: [],
 		};
 
-		if (!pre.length) {
-			pre.push(currentHeadingInfo);
-		} else {
-			insertHeadingInfo(pre, currentHeadingInfo);
-		}
+		pre.push(currentHeadingInfo);
 
 		return pre;
 	}, []);
 
 	return parsedResult;
-};
-
-export const insertHeadingInfo = (headingInfo: IMdHeadingInfo[], target: IMdHeadingInfo) => {
-	const fatherInfo: IMdHeadingInfo[] = headingInfo;
-	const resultLastNode = getLast(headingInfo);
-
-	if (target.level <= resultLastNode.level) {
-		fatherInfo.push(target);
-		return;
-	}
-
-	if (resultLastNode.children.length) {
-		insertHeadingInfo(resultLastNode.children, target);
-	} else {
-		resultLastNode.children.push(target);
-	}
 };

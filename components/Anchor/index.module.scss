@@ -1,0 +1,55 @@
+.wrapper {
+  border: var(--page-border);
+  border-radius: 12px;
+  background: var(--foreground);
+
+  position: sticky;
+  top: 1vw;
+
+  padding: 16px 0 16px 16px;
+  width: 300px;
+
+
+  .anchor-menu {
+    font-size: 20px;
+    padding-bottom: 12px;
+    border-bottom: var(--page-border);
+    font-weight: bold;
+  }
+
+  .anchor-list {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .anchor-link {
+    margin: 12px 0;
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 16px;
+  }
+
+  .heading-2 {
+    padding-left: 0;
+  }
+
+  .heading-3 {
+    padding-left: 1em;
+  }
+
+  .heading-4 {
+    padding-left: 2em;
+  }
+
+  .heading-5 {
+    padding-left: 3em;
+  }
+
+  .heading-6 {
+    padding-left: 4em;
+  }
+}

@@ -1,12 +1,41 @@
-.wrapper {}
-
-.container {
+.wrapper {
+  // position: relative;
+  padding: 1vw;
   background: var(--background);
-  padding: 4vw;
-}
+  display: flex;
+  justify-content: center;
 
-@media screen and (max-width: 480px) {
+
   .container {
+    padding: 3vw;
+
+    &--with-menu {
+      padding: 4vw 1vw 4vw 10vw;
+    }
+  }
+
+  .menu {
+    padding-top: 4vw;
+  }
+
+  @media screen and (max-width: 1200px) {
+    display: block;
+
+    .container {
+      padding: 4vw;
+    }
+
+    .menu {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    display: block;
     padding: 0;
+
+    .container {
+      padding: 0;
+    }
   }
 }

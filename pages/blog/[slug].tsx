@@ -1,6 +1,8 @@
 import BackButton from '@components/BackButton';
 import BlogContent from '@components/BlogContent';
+import Layout from '@components/Layout';
 import { BlogInfo, getAllBlogs, getBlogBySlug } from '@utils/getBlog';
+import Anchor from 'components/Anchor';
 import React from 'react';
 
 type PathParams = {
@@ -21,10 +23,10 @@ const Blog = (props: IBlogProps) => {
 	} = props;
 
 	return (
-		<div>
+		<Layout menu={<Anchor content={content} />}>
 			<BackButton />
 			<BlogContent title={title} content={content} />
-		</div>
+		</Layout>
 	);
 };
 

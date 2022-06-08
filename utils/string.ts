@@ -1,5 +1,4 @@
-export const getPreviewContent = (mdContent: string) =>
-	mdContent.replaceAll(/[# | * | ` | -]/g, ' ');
+export const getPreviewContent = (mdContent: string) => mdContent.replace(/[# | * | ` | -]/g, ' ');
 
 /**
  * Search for the count of occurrences of the target string in long string.
@@ -10,4 +9,9 @@ export const getPreviewContent = (mdContent: string) =>
 export const getTargetStringCount = (longStr: string, target: string): number =>
 	longStr.includes(target) ? longStr.split(target).length - 1 : 0;
 
-export const getAnchorByTitle = (title: string) => title.toLowerCase().replaceAll(' ', '-');
+/**
+ * adapter title to anchor
+ * @param title
+ * @returns lowercase string separated by -
+ */
+export const getAnchorByTitle = (title: string) => title.replace(/[' ']/g, '-').toLowerCase();
