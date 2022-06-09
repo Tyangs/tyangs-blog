@@ -1,28 +1,27 @@
 .wrapper {
-  // position: relative;
-  padding: 1vw;
+  padding: 2vw;
   background: var(--background);
   display: flex;
   justify-content: center;
 
 
   .container {
-    padding: 3vw;
+    padding: 2vw;
 
     &--with-menu {
-      padding: 4vw 1vw 4vw 10vw;
+      padding: 2vw 1vw 2vw 8vw;
     }
   }
 
   .menu {
-    padding-top: 4vw;
+    padding-top: 2vw;
   }
 
   @media screen and (max-width: 1200px) {
     display: block;
 
     .container {
-      padding: 4vw;
+      padding: 2vw;
     }
 
     .menu {

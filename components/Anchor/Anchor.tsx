@@ -17,8 +17,8 @@ const Anchor = (props: IAnchorProps) => {
 		<div className={styles.wrapper}>
 			<div className={styles['anchor-menu']}>Menu</div>
 			<div className={styles['anchor-list']}>
-				{headingInfo.map(({ anchor, title, level }) => (
-					<AnchorLink level={level} anchor={anchor} key={anchor}>
+				{headingInfo.map(({ anchor, title, level }, index) => (
+					<AnchorLink level={level} anchor={`heading-${index + 1}`} key={anchor}>
 						{title}
 					</AnchorLink>
 				))}

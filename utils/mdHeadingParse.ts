@@ -1,4 +1,3 @@
-import { getLast } from './array';
 import { getAnchorByTitle, getTargetStringCount } from './string';
 
 export interface IMdHeadingInfo {
@@ -24,7 +23,6 @@ export const mdHeadingParse = (mdContent: string): IMdHeadingInfo[] => {
 			level,
 			anchor,
 			title,
-			children: [],
 		};
 
 		pre.push(currentHeadingInfo);
@@ -33,4 +31,14 @@ export const mdHeadingParse = (mdContent: string): IMdHeadingInfo[] => {
 	}, []);
 
 	return parsedResult;
+};
+
+export const getHeadingAnchorMap = (mdContent: string): Record<string, string> => {
+	const headingInfo = mdHeadingParse(mdContent);
+	const headingAnchorMap = headingInfo.reduce<Record<string, string>>((pre, curr, index) => {
+		pre[curr.title] = `heading-${index}`;
+		return pre;
+	}, {});
+
+	return headingAnchorMap;
 };
