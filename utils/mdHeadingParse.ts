@@ -36,7 +36,7 @@ export const mdHeadingParse = (mdContent: string): IMdHeadingInfo[] => {
 export const getHeadingAnchorMap = (mdContent: string): Record<string, string> => {
 	const headingInfo = mdHeadingParse(mdContent);
 	const headingAnchorMap = headingInfo.reduce<Record<string, string>>((pre, curr, index) => {
-		pre[curr.title] = `heading-${index}`;
+		pre[curr.title] = `heading-${index + 1}`;
 		return pre;
 	}, {});
 

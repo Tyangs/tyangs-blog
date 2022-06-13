@@ -1,5 +1,5 @@
 import { getHeadingAnchorMap } from '@utils/mdHeadingParse';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { HeadingProps } from 'react-markdown/lib/ast-to-react';
 import rehypeHighlight from 'rehype-highlight';
@@ -36,6 +36,13 @@ const BlogContent = (props: BlogContentProps) => {
 			),
 		};
 	}, [content]);
+
+	useEffect(() => {
+		document.getElementsByTagName('html')[0].classList.add(styles['smooth-scroll']);
+		return () => {
+			document.getElementsByTagName('html')[0].classList.remove(styles['smooth-scroll']);
+		};
+	}, []);
 
 	return (
 		<div className={styles['markdown-body']}>
