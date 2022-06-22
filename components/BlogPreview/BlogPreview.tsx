@@ -13,13 +13,15 @@ const BlogPreview = (props: IBlogPreviewProps) => {
 
 	const readingTime = Math.floor(content.length / 400);
 
+	const previewContent = getPreviewContent(content).substring(0, 200);
+
 	return (
 		<div className={styles['wrapper']}>
 			<Link href={`/blog/${slug}`} passHref>
 				<span className={styles['title']}>{title}</span>
 			</Link>
 			<div className={styles['content']}>
-				{getPreviewContent(content).substring(0, 200)}
+				{previewContent}
 				<Link href={`/blog/${slug}`} passHref>
 					<span className={styles['ellipsis']}> ...</span>
 				</Link>

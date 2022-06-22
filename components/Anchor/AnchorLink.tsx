@@ -1,7 +1,6 @@
 import { IMdHeadingInfo } from '@utils/mdHeadingParse';
 import cls from 'classnames';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React from 'react';
 
 import styles from './index.module.scss';
