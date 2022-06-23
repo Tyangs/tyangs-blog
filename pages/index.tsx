@@ -1,10 +1,10 @@
 import BlogPreview from '@components/BlogPreview';
 import Header from '@components/Header';
 import Layout from '@components/Layout';
-import { BlogInfo, getAllBlogs } from '@utils/getBlog';
+import { getAllBlogs, IBlogInfo } from '@utils/getBlog';
 
 interface IHomeProps {
-	blogInfos: BlogInfo[];
+	blogInfos: IBlogInfo[];
 }
 
 const Home = (props: IHomeProps) => {

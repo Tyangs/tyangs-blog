@@ -1,29 +1,29 @@
 import BackButton from '@components/BackButton';
 import BlogContent from '@components/BlogContent';
 import Layout from '@components/Layout';
-import { BlogInfo, getAllBlogs, getBlogBySlug } from '@utils/getBlog';
+import { getAllBlogs, getBlogBySlug, IBlogInfo } from '@utils/getBlog';
 import Anchor from 'components/Anchor';
 import React from 'react';
 
-type PathParams = {
+interface IPathParams {
 	slug: string;
-};
+}
 
-type PathsProps = {
-	params: PathParams;
-};
+interface IPathsProps {
+	params: IPathParams;
+}
 
 interface IBlogProps {
-	blogInfo: BlogInfo;
+	blogInfo: IBlogInfo;
 }
 
 const Blog = (props: IBlogProps) => {
 	const {
-		blogInfo: { title, content },
+		blogInfo: { title, content, menu_active },
 	} = props;
 
 	return (
-		<Layout menu={<Anchor content={content} />}>
+		<Layout menu={menu_active ? <Anchor content={content} /> : undefined}>
 			<BackButton />
 			<BlogContent title={title} content={content} />
 		</Layout>
@@ -32,15 +32,11 @@ const Blog = (props: IBlogProps) => {
 
 export default Blog;
 
-export async function getStaticProps({ params }: PathsProps) {
+export async function getStaticProps({ params }: IPathsProps) {
 	const blogInfo = getBlogBySlug(params.slug);
-	const content = blogInfo.content;
 
 	const props = {
-		blogInfo: {
-			...blogInfo,
-			content,
-		},
+		blogInfo,
 	};
 
 	return {

@@ -1,6 +1,7 @@
 ---
 title: About Git
 date: '2022-05-22'
+menu_active: false
 ---
 
 # About Git

@@ -3,11 +3,12 @@ import matter from 'gray-matter';
 import path from 'path';
 
 // export type BlogOptionItem = 'title' | 'date' | 'slug' | 'content';
-export type BlogInfo = {
-	title: string;
-	date: string;
+export type IBlogInfo = {
 	slug: string;
+	title: string;
 	content: string;
+	date: string;
+	menu_active?: boolean;
 };
 
 const blogsDir = path.join(process.cwd(), '_blogs');
@@ -23,7 +24,7 @@ export const getBlogSlugs = () => fs.readdirSync(blogsDir);
  * @param slug blog file name in the _blogs dir
  * @returns blogInfo
  */
-export const getBlogBySlug = (slug: string): BlogInfo => {
+export const getBlogBySlug = (slug: string): IBlogInfo => {
 	const realSlug = slug.replace(/\.md$/, '');
 	const blogPath = path.join(blogsDir, `${realSlug}.md`);
 	const fileContents = fs.readFileSync(blogPath, 'utf-8');
@@ -32,6 +33,7 @@ export const getBlogBySlug = (slug: string): BlogInfo => {
 	return {
 		title: data.title,
 		date: data.date,
+		menu_active: !!data.menu_active,
 		slug: realSlug,
 		content,
 	};

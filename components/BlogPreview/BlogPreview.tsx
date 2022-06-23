@@ -1,12 +1,12 @@
 import Divider from '@components/Divider';
-import { BlogInfo } from '@utils/getBlog';
+import { IBlogInfo } from '@utils/getBlog';
 import { getPreviewContent } from '@utils/string';
 import Link from 'next/link';
 import React from 'react';
 
 import styles from './index.module.scss';
 
-interface IBlogPreviewProps extends BlogInfo {}
+interface IBlogPreviewProps extends IBlogInfo {}
 
 const BlogPreview = (props: IBlogPreviewProps) => {
 	const { title, slug, date, content } = props;
