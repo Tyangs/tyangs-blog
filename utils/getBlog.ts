@@ -25,8 +25,8 @@ export const getBlogSlugs = () => fs.readdirSync(blogsDir);
  * @returns blogInfo
  */
 export const getBlogBySlug = (slug: string): IBlogInfo => {
-	const realSlug = slug.replace(/\.md$/, '');
-	const blogPath = path.join(blogsDir, `${realSlug}.md`);
+	const realSlug = slug.replace(/\.mdx$/, '');
+	const blogPath = path.join(blogsDir, `${realSlug}.mdx`);
 	const fileContents = fs.readFileSync(blogPath, 'utf-8');
 	const { data, content } = matter(fileContents);
 

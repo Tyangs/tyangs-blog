@@ -1,5 +1,6 @@
 import '../styles/globals.css';
-import '../styles/hljs.css';
+// import '../styles/hljs.css';
+import 'highlight.js/scss/github.scss';
 
 import { ThemeProvider } from '@context/ThemeProvider';
 import type { AppProps } from 'next/app';

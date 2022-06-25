@@ -2,7 +2,8 @@
 
 # Need to do:
 - [ ]  article tag
+- [ ]  dark mode
 - [ ]  menu display control
-- [ ]  previous & next article
+- [ ]  previous & next
 - [ ]  chinese & english multilingual design
 - [ ]  the write blog admin

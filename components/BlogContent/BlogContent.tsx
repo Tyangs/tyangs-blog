@@ -47,8 +47,8 @@ const BlogContent = (props: BlogContentProps) => {
 	return (
 		<div className={styles['markdown-body']}>
 			<ReactMarkdown
-				components={customComponents}
 				linkTarget="_blank"
+				components={customComponents}
 				rehypePlugins={[rehypeRaw, rehypeHighlight]}
 				remarkPlugins={[remarkGfm]}
 			>
