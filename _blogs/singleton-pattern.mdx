@@ -3,6 +3,7 @@ title: 单例模式
 date: '2022-06-25'
 tag: patterns
 ---
+
 # 单例模式
 
 > 译自 [patterns](https://www.patterns.dev/posts/singleton-pattern/)
@@ -70,7 +71,7 @@ console.log(counter1.getInstance() === counter2.getInstance);
 
 通过调用两次 `new` 方法，我们只是设置 `counter1` 和 `counter2` 等于两个不同的实例。`counter1` 和 `counter2` 的 `getInstance` 方法返回的值来自不同实例的引用：它们不完全相等。
 
-[https://res.cloudinary.com/ddxwdqwkr/video/upload/v1609056519/patterns.dev/jspat-52_zkwyk1.mp4](https://res.cloudinary.com/ddxwdqwkr/video/upload/v1609056519/patterns.dev/jspat-52_zkwyk1.mp4)
+<video width="100%" src="/singleton-pattern/01.mp4" autoplay="" controls="" playsinline="" loop=""><source src="/singleton-pattern/01.mp4"></video>
 
 让我们确保 `Counter` 类仅能被创建**一个**实例。
 
@@ -158,7 +159,7 @@ export default singletonCounter;
 
 `redButton.js` 和 `blueButton.js` 从 `counter.js` 中引入同一个实例，在这两个文件中该实例被作为 `Counter` 引入。
 
-[https://res.cloudinary.com/ddxwdqwkr/video/upload/v1609056519/patterns.dev/jspat-56_wylvcf.mp4](https://res.cloudinary.com/ddxwdqwkr/video/upload/v1609056519/patterns.dev/jspat-56_wylvcf.mp4)
+<video width="100%" src="/singleton-pattern/02.mp4" autoplay="" controls="" playsinline="" loop=""><source src="/singleton-pattern/02.mp4"></video>
 
 当我们在 `redButton.js` 或 `blueButton.js` 中调用 `increment` 方法，`Couter` 实例上的 `counter` 变量值会在两个文件中都更新。无论我们点击红色按钮还是蓝色按钮都无所谓，因为所有的实例都共享相同的值，这就是为何及时我们在不同的文件中调用方法，`counter` 也会一直递增 1 的原因。
 
