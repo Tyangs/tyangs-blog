@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { LeftArrow } from '../Icons';
+import { LeftArrowIcon } from '../Icons';
 import styles from './index.module.scss';
 
 const BackButton = () => {
@@ -12,7 +12,7 @@ const BackButton = () => {
 
 	return (
 		<div className={styles['back-button']} onClick={goBack}>
-			<LeftArrow />
+			<LeftArrowIcon />
 		</div>
 	);
 };

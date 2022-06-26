@@ -9,6 +9,7 @@ export type IBlogInfo = {
 	content: string;
 	date: string;
 	menu_active?: boolean;
+	tag?: string;
 };
 
 const blogsDir = path.join(process.cwd(), '_blogs');
@@ -34,6 +35,7 @@ export const getBlogBySlug = (slug: string): IBlogInfo => {
 		title: data.title,
 		date: data.date,
 		menu_active: !!data.menu_active,
+		tag: data.tag || '',
 		slug: realSlug,
 		content,
 	};

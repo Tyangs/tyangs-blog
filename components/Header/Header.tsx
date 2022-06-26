@@ -44,7 +44,7 @@ const Header = () => {
 					alt="tyangs logo"
 				/>
 			</Link>
-			<div className={styles['nav-bar']}>
+			<nav className={styles['nav-bar']}>
 				{navBarList.map(n => (
 					<Link href={n.link} key={n.label} passHref>
 						<span className={styles['nav-bar_item']} aria-label={n.ariaLabel}>
@@ -55,7 +55,7 @@ const Header = () => {
 				{/* <span className={styles['nav-bar_item']} onClick={toggleTheme}>
 					主题
 				</span> */}
-			</div>
+			</nav>
 			<Divider />
 		</div>
 	);

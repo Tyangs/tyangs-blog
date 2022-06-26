@@ -45,7 +45,7 @@ const BlogContent = (props: BlogContentProps) => {
 	}, []);
 
 	return (
-		<div className={styles['markdown-body']}>
+		<article className={styles['markdown-body']}>
 			<ReactMarkdown
 				linkTarget="_blank"
 				components={customComponents}
@@ -54,7 +54,7 @@ const BlogContent = (props: BlogContentProps) => {
 			>
 				{content}
 			</ReactMarkdown>
-		</div>
+		</article>
 	);
 };
 
